@@ -3,11 +3,11 @@ export function CustomDropdown({items, getter, setter}) {
         setter(e.target.value)
     }    
     return (
-<select value={getter} onChange={handleDropdown} required>
+<select className="rounded-lg bg-gray-200" value={getter} onChange={handleDropdown} required>
 
 {
     items.map( (item) => 
-      <option key={item}>{item}</option> )
+      <option key={item} className="focus:bg-green-400">{item}</option> )
   }
     </select>     
     )

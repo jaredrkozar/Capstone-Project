@@ -40,17 +40,20 @@ function SalaryPrediction() {
   };
 
   return (
-    <div>
+    <div className=''>
+      <div className='flex flex-row pb-10 gap-6'>
       <CustomButton buttonText="Back" onClick={navigateToPage}></CustomButton>
-      <h1>Estimate Your Compensation</h1>
-      <form onSubmit={handleSubmit}>
+      <h1 className="font-bold text-2xl">Estimate Your Compensation</h1>
+      </div>
+      
+      <form className='flex flex-col gap-10' onSubmit={handleSubmit}>
         <label>
-          Role:
+          Role: 
           <CustomDropdown items={ ["IT", "Data Scientist", "Building Security", "Custodial", "Software Engineer", "CyberSecurity", "HR", "Customer Support", "Finance", "Accounting"]} getter={job} setter={setJob}></CustomDropdown>
          
         </label>
         <label>
-          Location:
+          Location: 
           <CustomDropdown items={["Hartford, Connecticut", "San Francisco, California", "Topeka, Kansas", "Boston, Massachusetts", "New York City, New York"]} getter={location} setter={setLocation}></CustomDropdown>
 
         </label>
@@ -58,9 +61,9 @@ function SalaryPrediction() {
 
       </form>
       {prediction && (
-        <div className="text-lg font-medium">
+        <div className="text-6xl font-medium">
           <h2>Prediction:</h2>
-          <p>{prediction}</p>
+          <p>${prediction.slice(1, prediction.length - 1)}</p>
         </div>
       )}
     </div>
