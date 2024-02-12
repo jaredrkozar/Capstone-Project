@@ -30,7 +30,6 @@ function SalaryPrediction() {
 
       if (response.ok) {
         const data = await response.json();
-        console.log(data);
         setPrediction(data ? data: "Invalid Inputs");
       } else {
         console.error('Error:', response.status, response.statusText);
@@ -59,7 +58,7 @@ function SalaryPrediction() {
 
       </form>
       {prediction && (
-        <div>
+        <div className="text-lg font-medium">
           <h2>Prediction:</h2>
           <p>{prediction}</p>
         </div>

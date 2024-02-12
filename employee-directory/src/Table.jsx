@@ -60,8 +60,8 @@ export function Table({employees, showSalary}) {
     )
 }
 
-export function TableHolder({title, children}) {
-    const [tableExpanded, setTableExpanded] = useState(true)
+export function TableHolder({title, isExpanded, children}) {
+    const [tableExpanded, setTableExpanded] = useState(!isExpanded)
 
     const handleTableExpand = () => {
         setTableExpanded(tableExpanded => !tableExpanded)

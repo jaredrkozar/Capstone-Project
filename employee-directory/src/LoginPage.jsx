@@ -15,7 +15,11 @@ export function LoginPage() {
 
     const navigateToPage = async () => {
         let employeeInfo = await fetchLoginData(firstName, lastName)
-        navigate(`/employees/${employeeInfo.id}`)
+        if (employeeInfo.isManager == true) {
+            navigate(`/manager/${employeeInfo.id}`)
+        } else {
+            navigate(`/employees/${employeeInfo.id}`)
+        }
     }
 
     return (
