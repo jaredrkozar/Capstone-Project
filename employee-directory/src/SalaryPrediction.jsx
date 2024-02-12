@@ -61,9 +61,8 @@ function SalaryPrediction() {
 
       </form>
       {prediction && (
-        <div className="text-6xl font-medium">
-          <h2>Prediction:</h2>
-          <p>${prediction.slice(1, prediction.length - 1)}</p>
+        <div className="text-3xl font-medium">
+          <p>The predicted salary for a {job} role in {location} is ${prediction.slice(1, prediction.length - 1)}</p>
         </div>
       )}
     </div>
